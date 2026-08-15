@@ -1,0 +1,513 @@
+/* ═══════════════════════════════════════════════
+   Root
+═══════════════════════════════════════════════ */
+.root {
+    -fx-background-color: #212121;
+    -fx-font-family: "Segoe UI", "Helvetica Neue", Arial, sans-serif;
+    -fx-font-size: 13px;
+}
+
+/* ═══════════════════════════════════════════════
+   Top bar
+═══════════════════════════════════════════════ */
+.top-bar {
+    -fx-background-color: #2d2d2d;
+    -fx-padding: 8 14 8 10;
+    -fx-alignment: CENTER_LEFT;
+    -fx-border-color: #3a3a3a;
+    -fx-border-width: 0 0 1 0;
+}
+
+.app-title {
+    -fx-text-fill: #e0e0e0;
+    -fx-font-size: 15px;
+    -fx-font-weight: bold;
+}
+
+/* ═══════════════════════════════════════════════
+   Hamburger menu button
+═══════════════════════════════════════════════ */
+.menu-btn {
+    -fx-background-color: transparent;
+    -fx-text-fill: #e0e0e0;
+    -fx-font-size: 18px;
+    -fx-padding: 2 10 2 6;
+    -fx-cursor: hand;
+    -fx-border-radius: 4;
+    -fx-background-radius: 4;
+}
+.menu-btn:hover {
+    -fx-background-color: #3a3a3a;
+}
+
+/* ═══════════════════════════════════════════════
+   Popup window
+═══════════════════════════════════════════════ */
+.popup-root {
+    -fx-background-color: #2d2d2d;
+}
+.field-label {
+    -fx-text-fill: #aaaaaa;
+    -fx-font-size: 12px;
+}
+.cancel-btn {
+    -fx-background-color: #3a3a3a;
+    -fx-text-fill: #e0e0e0;
+    -fx-border-radius: 4;
+    -fx-background-radius: 4;
+    -fx-padding: 6 18 6 18;
+    -fx-cursor: hand;
+}
+.cancel-btn:hover {
+    -fx-background-color: #484848;
+}
+
+/* ═══════════════════════════════════════════════
+   Drawer overlay (dimmed background)
+═══════════════════════════════════════════════ */
+.drawer-overlay {
+    -fx-background-color: rgba(0, 0, 0, 0.45);
+}
+
+/* ═══════════════════════════════════════════════
+   Drawer panel
+═══════════════════════════════════════════════ */
+.drawer {
+    -fx-background-color: #2a2a2a;
+    -fx-border-color: #3a3a3a;
+    -fx-border-width: 0 1 0 0;
+    -fx-padding: 0;
+    -fx-pref-width: 220;
+    -fx-min-height: 10000;   /* stretch full height */
+}
+
+.drawer-title {
+    -fx-text-fill: #aaaaaa;
+    -fx-font-size: 11px;
+    -fx-font-weight: bold;
+    -fx-padding: 14 14 6 14;
+}
+.drawer-sep {
+    -fx-background-color: #3a3a3a;
+    -fx-padding: 0 0 4 0;
+}
+
+.drawer-item {
+    -fx-background-color: transparent;
+    -fx-text-fill: #e0e0e0;
+    -fx-font-size: 13px;
+    -fx-alignment: CENTER_LEFT;
+    -fx-padding: 10 14 10 14;
+    -fx-border-radius: 0;
+    -fx-background-radius: 0;
+    -fx-cursor: hand;
+}
+.drawer-item:hover {
+    -fx-background-color: #353535;
+}
+
+/* ═══════════════════════════════════════════════
+   Dialogs
+═══════════════════════════════════════════════ */
+.dark-dialog {
+    -fx-background-color: #2d2d2d;
+}
+.dark-dialog .header-panel,
+.dark-dialog .header-panel .label {
+    -fx-background-color: #2d2d2d;
+    -fx-text-fill: #e0e0e0;
+}
+.dark-dialog .button-bar {
+    -fx-background-color: #2d2d2d;
+    -fx-border-color: #3a3a3a;
+    -fx-border-width: 1 0 0 0;
+    -fx-padding: 8 12 8 12;
+}
+.dialog-content {
+    -fx-background-color: #2d2d2d;
+}
+.dialog-content .label {
+    -fx-text-fill: #aaaaaa;
+    -fx-font-size: 12px;
+}
+
+/* ═══════════════════════════════════════════════
+   Inputs
+═══════════════════════════════════════════════ */
+.task-input {
+    -fx-background-color: #3a3a3a;
+    -fx-text-fill: #e0e0e0;
+    -fx-prompt-text-fill: #777777;
+    -fx-border-color: #555555;
+    -fx-border-radius: 4;
+    -fx-background-radius: 4;
+    -fx-padding: 6 10 6 10;
+}
+.task-input:focused {
+    -fx-border-color: #10a37f;
+}
+
+/* ═══════════════════════════════════════════════
+   Buttons
+═══════════════════════════════════════════════ */
+.add-btn {
+    -fx-background-color: #10a37f;
+    -fx-text-fill: #ffffff;
+    -fx-font-weight: bold;
+    -fx-border-radius: 4;
+    -fx-background-radius: 4;
+    -fx-padding: 6 18 6 18;
+    -fx-cursor: hand;
+}
+.add-btn:hover {
+    -fx-background-color: #0d8a6b;
+}
+
+/* ═══════════════════════════════════════════════
+   Error / description labels
+═══════════════════════════════════════════════ */
+.error-label {
+    -fx-text-fill: #e57373;
+    -fx-font-size: 12px;
+}
+.locked-hint {
+    -fx-text-fill: #777777;
+    -fx-font-size: 10px;
+    -fx-font-style: italic;
+}
+.task-desc-label {
+    -fx-text-fill: #777777;
+    -fx-font-size: 11px;
+    -fx-padding: 0 0 4 22;
+}
+
+/* ═══════════════════════════════════════════════
+   Choose-tasks checkboxes
+═══════════════════════════════════════════════ */
+.choose-cb {
+    -fx-text-fill: #e0e0e0;
+    -fx-padding: 4 0 2 0;
+}
+.choose-cb .box {
+    -fx-background-color: #3a3a3a;
+    -fx-border-color: #666666;
+    -fx-border-radius: 3;
+    -fx-background-radius: 3;
+}
+.choose-cb:selected .box {
+    -fx-background-color: #10a37f;
+    -fx-border-color: #10a37f;
+}
+.choose-cb:selected .mark {
+    -fx-background-color: #ffffff;
+}
+
+/* ═══════════════════════════════════════════════
+   Month navigation bar
+═══════════════════════════════════════════════ */
+.month-nav-bar {
+    -fx-background-color: #272727;
+    -fx-padding: 6 14 6 14;
+    -fx-border-color: #3a3a3a;
+    -fx-border-width: 0 0 1 0;
+}
+.month-label {
+    -fx-text-fill: #e0e0e0;
+    -fx-font-size: 13px;
+    -fx-font-weight: bold;
+    -fx-min-width: 140;
+    -fx-alignment: CENTER;
+}
+.nav-btn {
+    -fx-background-color: #3a3a3a;
+    -fx-text-fill: #e0e0e0;
+    -fx-font-size: 16px;
+    -fx-font-weight: bold;
+    -fx-pref-width: 32;
+    -fx-pref-height: 28;
+    -fx-padding: 0 8 0 8;
+    -fx-border-radius: 4;
+    -fx-background-radius: 4;
+    -fx-cursor: hand;
+}
+.nav-btn:hover {
+    -fx-background-color: #484848;
+}
+.nav-btn:disabled {
+    -fx-opacity: 0.3;
+    -fx-cursor: default;
+}
+
+/* ═══════════════════════════════════════════════
+   Grid scroll pane
+═══════════════════════════════════════════════ */
+.grid-scroll {
+    -fx-background-color: #212121;
+    -fx-background: #212121;
+    -fx-border-color: transparent;
+}
+.grid-scroll > .viewport {
+    -fx-background-color: #212121;
+}
+
+/* ═══════════════════════════════════════════════
+   TableView
+═══════════════════════════════════════════════ */
+.calendar-table {
+    -fx-background-color: #212121;
+    -fx-border-color: #3a3a3a;
+    -fx-table-cell-border-color: #3a3a3a;
+}
+.calendar-table .placeholder .label {
+    -fx-text-fill: #666666;
+}
+.calendar-table .column-header-background {
+    -fx-background-color: #2d2d2d;
+}
+.calendar-table .column-header {
+    -fx-background-color: #2d2d2d;
+    -fx-border-color: #3a3a3a;
+    -fx-border-width: 0 1 1 0;
+}
+.calendar-table .column-header .label {
+    -fx-text-fill: #aaaaaa;
+    -fx-font-size: 11px;
+    -fx-alignment: CENTER;
+}
+/* Today's column header */
+.today-column .column-header {
+    -fx-background-color: #1a3a2f;
+}
+.today-column .column-header .label {
+    -fx-text-fill: #10a37f;
+    -fx-font-weight: bold;
+}
+/* Rows */
+.calendar-table .table-row-cell {
+    -fx-background-color: #212121;
+    -fx-border-color: #2d2d2d;
+    -fx-border-width: 0 0 1 0;
+}
+.calendar-table .table-row-cell:odd {
+    -fx-background-color: #252525;
+}
+.calendar-table .table-row-cell:hover {
+    -fx-background-color: #2a2a2a;
+}
+.calendar-table .table-row-cell:selected {
+    -fx-background-color: #2a3a35;
+}
+/* Cells */
+.calendar-table .table-cell {
+    -fx-text-fill: #e0e0e0;
+    -fx-alignment: CENTER;
+    -fx-padding: 4 2 4 2;
+    -fx-border-color: #2d2d2d;
+    -fx-border-width: 0 1 0 0;
+}
+
+/* ═══════════════════════════════════════════════
+   Checkboxes in calendar cells
+═══════════════════════════════════════════════ */
+.check-box .box {
+    -fx-background-color: #3a3a3a;
+    -fx-border-color: #666666;
+    -fx-border-radius: 3;
+    -fx-background-radius: 3;
+    -fx-pref-width: 16;
+    -fx-pref-height: 16;
+}
+.check-box:selected .box {
+    -fx-background-color: #10a37f;
+    -fx-border-color: #10a37f;
+}
+.check-box:selected .mark {
+    -fx-background-color: #ffffff;
+}
+.check-box:disabled .box {
+    -fx-background-color: #2a2a2a;
+    -fx-border-color: #444444;
+    -fx-opacity: 0.45;
+}
+.check-box:disabled:selected .box {
+    -fx-background-color: #1a5c4a;
+    -fx-border-color: #1a5c4a;
+    -fx-opacity: 0.65;
+}
+
+/* ═══════════════════════════════════════════════
+   Right task panel
+═══════════════════════════════════════════════ */
+.task-panel {
+    -fx-background-color: #252525;
+    -fx-border-color: #3a3a3a;
+    -fx-border-width: 0 0 0 1;
+    -fx-padding: 0;
+}
+.task-panel-title {
+    -fx-text-fill: #aaaaaa;
+    -fx-font-size: 11px;
+    -fx-font-weight: bold;
+    -fx-padding: 10 12 4 12;
+}
+.task-panel-hint {
+    -fx-text-fill: #666666;
+    -fx-font-size: 10px;
+    -fx-padding: 0 12 6 12;
+}
+.task-panel-section {
+    -fx-text-fill: #888888;
+    -fx-font-size: 10px;
+    -fx-font-weight: bold;
+    -fx-padding: 4 0 2 0;
+}
+.task-panel-scroll {
+    -fx-background-color: #252525;
+    -fx-background: #252525;
+    -fx-border-color: transparent;
+}
+.task-panel-scroll > .viewport {
+    -fx-background-color: #252525;
+}
+.task-panel-row {
+    -fx-background-color: #252525;
+    -fx-padding: 5 4 5 4;
+    -fx-border-color: #2e2e2e;
+    -fx-border-width: 0 0 1 0;
+}
+.task-panel-row:hover {
+    -fx-background-color: #2e2e2e;
+}
+.task-panel-row-assigned {
+    -fx-background-color: #1e2e28;
+    -fx-padding: 5 4 5 4;
+    -fx-border-color: #2a3a34;
+    -fx-border-width: 0 0 1 0;
+}
+.task-panel-name {
+    -fx-text-fill: #d0d0d0;
+    -fx-font-size: 12px;
+}
+.task-panel-desc {
+    -fx-text-fill: #666666;
+    -fx-font-size: 10px;
+}
+.task-panel-empty {
+    -fx-text-fill: #555555;
+    -fx-font-size: 11px;
+    -fx-padding: 8 0 0 0;
+}
+.assign-btn {
+    -fx-background-color: #10a37f;
+    -fx-text-fill: #ffffff;
+    -fx-font-weight: bold;
+    -fx-font-size: 14px;
+    -fx-pref-width: 28;
+    -fx-pref-height: 26;
+    -fx-padding: 0;
+    -fx-border-radius: 4;
+    -fx-background-radius: 4;
+    -fx-cursor: hand;
+}
+.assign-btn:hover { -fx-background-color: #0d8a6b; }
+.remove-btn {
+    -fx-background-color: #4a2a2a;
+    -fx-text-fill: #e57373;
+    -fx-font-weight: bold;
+    -fx-font-size: 14px;
+    -fx-pref-width: 28;
+    -fx-pref-height: 26;
+    -fx-padding: 0;
+    -fx-border-radius: 4;
+    -fx-background-radius: 4;
+    -fx-cursor: hand;
+}
+.remove-btn:hover { -fx-background-color: #5a3030; }
+.edit-btn {
+    -fx-background-color: #3a3a4a;
+    -fx-text-fill: #aaaaff;
+    -fx-font-size: 12px;
+    -fx-pref-width: 26;
+    -fx-pref-height: 26;
+    -fx-padding: 0;
+    -fx-border-radius: 4;
+    -fx-background-radius: 4;
+    -fx-cursor: hand;
+}
+.edit-btn:hover { -fx-background-color: #44445a; }
+
+/* ═══════════════════════════════════════════════
+   Charts row (bottom strip)
+═══════════════════════════════════════════════ */
+.charts-row {
+    -fx-background-color: #1a1a1a;
+    -fx-border-color: #3a3a3a;
+    -fx-border-width: 1 0 0 0;
+}
+.chart-pane {
+    -fx-background-color: #1a1a1a;
+}
+.chart-divider {
+    -fx-background-color: #3a3a3a;
+    -fx-opacity: 1;
+}
+.chart-title {
+    -fx-text-fill: #aaaaaa;
+    -fx-font-size: 12px;
+    -fx-font-weight: bold;
+}
+/* Dark chart base */
+.dark-chart {
+    -fx-background-color: #1a1a1a;
+    -fx-padding: 0;
+}
+.dark-chart .chart-plot-background {
+    -fx-background-color: #222222;
+}
+.dark-chart .chart-title {
+    -fx-text-fill: #e0e0e0;
+}
+.dark-chart .axis-label {
+    -fx-text-fill: #888888;
+    -fx-font-size: 11px;
+}
+.dark-chart .axis {
+    -fx-tick-label-fill: #888888;
+}
+.dark-chart .chart-vertical-grid-lines,
+.dark-chart .chart-horizontal-grid-lines {
+    -fx-stroke: #2e2e2e;
+}
+.dark-chart .chart-alternative-row-fill,
+.dark-chart .chart-alternative-column-fill {
+    -fx-fill: transparent;
+}
+.dark-chart .chart-legend {
+    -fx-background-color: transparent;
+    -fx-padding: 4 0 0 0;
+}
+.dark-chart .chart-legend-item {
+    -fx-text-fill: #aaaaaa;
+    -fx-font-size: 11px;
+}
+.dark-chart .default-color0.chart-bar { -fx-bar-fill: #10a37f; }
+.dark-chart .chart-pie-label { -fx-fill: #cccccc; -fx-font-size: 10px; }
+
+/* ═══════════════════════════════════════════════
+   Scrollbars
+═══════════════════════════════════════════════ */
+.scroll-bar:horizontal,
+.scroll-bar:vertical {
+    -fx-background-color: #2d2d2d;
+}
+.scroll-bar .thumb {
+    -fx-background-color: #555555;
+    -fx-background-radius: 4;
+}
+.scroll-bar .thumb:hover {
+    -fx-background-color: #777777;
+}
+.scroll-bar .increment-button,
+.scroll-bar .decrement-button {
+    -fx-background-color: #2d2d2d;
+}
