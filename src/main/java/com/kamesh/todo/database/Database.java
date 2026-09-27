@@ -6,7 +6,9 @@ import java.sql.SQLException;
 import java.sql.Statement;
 
 public class Database {
-    private static final String URL = "jdbc:sqlite:todo.db";
+    // Allow override via -Dtodo.db=/path/to/todo.db (useful for Docker volume)
+    private static final String URL =
+        "jdbc:sqlite:" + System.getProperty("todo.db", "todo.db");
 
     public static Connection getConnection() throws SQLException {
         Connection conn = DriverManager.getConnection(URL);

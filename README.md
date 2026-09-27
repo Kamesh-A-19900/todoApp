@@ -4,56 +4,82 @@ A dark-themed JavaFX desktop app for tracking daily task completion across a mon
 
 ## What it does
 
-- Displays a grid where **rows = tasks**, **columns = days of the month**
-- Each cell has a checkbox — only **today's column** is interactive
-- Past and future dates are read-only
-- Tasks are stored in a master list and **assigned to specific months**
-- Once assigned to a month, a task cannot be removed
-- Charts at the bottom show your completion stats for the viewed month
+- Grid where **rows = tasks**, **columns = days of the month**
+- Checkboxes — only **today's column** is interactive; past/future are read-only
+- Tasks live in a master list; you assign them to specific months
+- Once assigned to a month a task cannot be removed
+- Bar chart + pie chart show your monthly completion stats
 - Data persists in a local SQLite file (`todo.db`)
 
 ---
 
-## Requirements
+## Requirements (local)
 
 - Java 21+
 - Maven 3.6+
-- JavaFX 21 (bundled via Maven — no separate install needed)
 
 ---
 
 ## Quick start (development)
 
 ```bash
-cd TodoApp
+git clone https://github.com/Kamesh-A-19900/todoApp.git
+cd todoApp
 mvn javafx:run
 ```
 
 ---
 
-## Install as a system app
-
-Builds a fat JAR and installs a `todo` command + desktop entry:
+## Install as a Linux system command
 
 ```bash
-cd TodoApp
 bash install.sh
 ```
 
-Then launch from anywhere:
+Then from anywhere:
 
 ```bash
 todo
 ```
 
-Or find **Todo** in your applications menu (GNOME / KDE / XFCE).
-
----
-
-## Uninstall
+Uninstall:
 
 ```bash
 bash uninstall.sh
+```
+
+---
+
+## Run with Docker (any OS with X11)
+
+### Linux
+
+```bash
+# Allow Docker to access your display
+xhost +local:docker
+
+# Build and run
+docker compose up --build
+```
+
+Data persists in a Docker named volume (`todo-data`). Your `todo.db` survives container restarts.
+
+### macOS
+
+Install [XQuartz](https://www.xquartz.org/), then:
+
+```bash
+xhost +localhost
+DISPLAY=host.docker.internal:0 docker compose up --build
+```
+
+### Windows
+
+Install [VcXsrv](https://sourceforge.net/projects/vcxsrv/) or [X410](https://x410.app/), start it, then:
+
+```bash
+set DISPLAY=host.docker.internal:0.0
+docker compose up --build
 ```
 
 ---
@@ -62,13 +88,10 @@ bash uninstall.sh
 
 ```bash
 mvn package
-# Output: target/todo-app.jar
-```
-
-Run it directly:
-
-```bash
-java -jar target/todo-app.jar
+java --module-path target/libs \
+     --add-modules javafx.controls,javafx.fxml \
+     -cp target/todo-app.jar:target/libs/sqlite-jdbc-3.50.3.0.jar \
+     com.kamesh.todo.Main
 ```
 
 ---
@@ -78,37 +101,25 @@ java -jar target/todo-app.jar
 ```
 TodoApp/
 ├── src/main/java/com/kamesh/todo/
-│   ├── Main.java                    # JavaFX entry point
-│   ├── controller/
-│   │   └── CalendarController.java  # UI controller
-│   ├── dao/
-│   │   ├── TodoDao.java             # Task data access
-│   │   └── CompletionDao.java       # Completion record data access
-│   ├── database/
-│   │   └── Database.java            # SQLite connection + schema init
-│   ├── model/
-│   │   ├── Todo.java                # Task model
-│   │   └── CompletionRecord.java    # Completion record model
-│   ├── service/
-│   │   └── TodoService.java         # Business logic layer
-│   └── ui/
-│       ├── CalendarGridBuilder.java # Builds the TableView grid
-│       └── ChartsBuilder.java       # Builds bar + pie charts
+│   ├── Main.java
+│   ├── controller/CalendarController.java
+│   ├── dao/TodoDao.java
+│   ├── dao/CompletionDao.java
+│   ├── database/Database.java
+│   ├── model/Todo.java
+│   ├── model/CompletionRecord.java
+│   ├── service/TodoService.java
+│   ├── ui/CalendarGridBuilder.java
+│   └── ui/ChartsBuilder.java
 ├── src/main/resources/com/kamesh/todo/
-│   ├── calendar.fxml                # Main layout
-│   └── style.css                    # Dark theme styles
-├── install.sh                       # Install as system command
-├── uninstall.sh                     # Remove system install
-├── todo.sh                          # Local launcher (no install)
+│   ├── calendar.fxml
+│   └── style.css
+├── Dockerfile
+├── docker-compose.yml
+├── install.sh
+├── uninstall.sh
 └── pom.xml
 ```
-
----
-
-## Data
-
-- Database file: `todo.db` in the working directory (created on first run)
-- After install, run `todo` from `~` so `todo.db` lives in your home directory
 
 ---
 
@@ -116,9 +127,9 @@ TodoApp/
 
 | Action | How |
 |---|---|
-| Add a task to master list | ☰ menu → Add Task |
+| Add a task to master list | ☰ → Add Task |
 | Assign task to this month | Click **＋** in the right panel |
-| Mark today complete | Click the checkbox in today's column |
-| View another month | Use **‹** / **›** navigation (only months with data shown) |
-| Edit task description | Click **✎** on any task — anytime |
+| Mark today complete | Click checkbox in today's column (green header) |
+| View another month | **‹** / **›** nav (only months with data enabled) |
+| Edit task description | Click **✎** — anytime |
 | Edit task name | Click **✎** — only within 24 hrs of creation |

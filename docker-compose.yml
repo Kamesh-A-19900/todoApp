@@ -1,0 +1,13 @@
+services:
+  todo:
+    build: .
+    image: todo-app
+    environment:
+      - DISPLAY=${DISPLAY}
+    volumes:
+      - /tmp/.X11-unix:/tmp/.X11-unix   # X11 socket for GUI
+      - todo-data:/data                  # persists todo.db
+    network_mode: host
+
+volumes:
+  todo-data:
